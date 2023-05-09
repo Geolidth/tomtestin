@@ -2,6 +2,8 @@
     "java.project.sourcePaths": ["src","test"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "/home/geolidth/Programozás/Junit5/junit-platform-console-standalone-1.9.2.jar",
+        "/home/geolidth/Programozás/Junit5/junit-jupiter-api-5.9.2.jar"
     ]
 }
