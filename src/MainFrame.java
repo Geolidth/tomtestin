@@ -48,11 +48,13 @@ public class MainFrame extends JFrame {
         String tomegStr = this.testtomegPanel.getValue();
         if(!this.checkInput(tomegStr)){
             JOptionPane .showMessageDialog(this, "A tömeg hibás, csak számjegy!");
+            return;
         }
         double tomeg = Double.parseDouble(tomegStr);
         String magassagStr=this.magassagPanel.getValue();
         if(!this.checkInput(magassagStr)){
             JOptionPane .showMessageDialog(this, "A magasság hibás, csak számjegy!");
+            return;
         }
         double magassag = Double.parseDouble(magassagStr);
         Double testTomegIndex = this.calcIndex(tomeg, magassag);
@@ -66,7 +68,7 @@ public class MainFrame extends JFrame {
 
     public boolean checkInput(String input){
         boolean ok = false;
-        if(input.matches("[0-9]+")){
+        if(input.matches("[0-9.]+")){
             ok= true;
         }
         return ok;
@@ -75,10 +77,12 @@ public class MainFrame extends JFrame {
     private void setFrame() {
         this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
         //this.setSize(400, 300);
-        this.pack();
+        
         this.setTitle(text);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        this.pack();
         this.setVisible(true);
+        
     }
 }
